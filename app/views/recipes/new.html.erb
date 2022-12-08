@@ -1,0 +1,16 @@
+<%= form_with model: @recipe do |form| %>
+    <div>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+    </div>
+
+    <div>
+        <% @recipe.errors.full_messages_for(:name).each do |message| %>
+            <div style="color: red"><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

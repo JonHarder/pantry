@@ -1,5 +1,14 @@
 class IngredientsController < ApplicationController
   def index
-    render json: Ingredient.all
+    @ingredients = Ingredient.order(in_stock: :desc)
+  end
+
+  def show
+    @ingredient = Ingredient.find(params[:id])
+    @recipes = []
+  end
+
+  def update_recipe_ingredients
+    
   end
 end

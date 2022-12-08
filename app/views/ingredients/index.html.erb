@@ -1,0 +1,24 @@
+<h1>Pantry</h1>
+<table>
+    <tr>
+        <th>In Recipes</th>
+        <th>Ingredient</th>
+        <th>In Stock</th>
+    </tr>
+    <% @ingredients.each do |ingredient| %>
+        <tr>
+            <td><input type="checkbox" id="<%= ingredient.id %>" name="<% ingredient.id %>"></td>
+            <td><%= link_to ingredient.name, ingredient %></td>
+            <td><%= ingredient.in_stock_str %></td>
+        </tr>
+    <% end %>
+
+    <% if !@recipes.nil? %>
+        <h2>Recipes</h2>
+        <ul>
+        <% @recipes.each do |recipe| %>
+            <li><%= link_to recipe.name, recipe %></li>
+        <% end %>
+        </ul>
+    <% end %>
+</table>

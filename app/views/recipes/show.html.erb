@@ -1,0 +1,16 @@
+<h1>
+    <%= @recipe.name %>
+</h1>
+
+<%= link_to "Back", recipes_path %>
+<h2>Ingredients</h2>
+<ul>
+    <% @recipe.ingredients.each do |ingredient| %>
+        <li>
+            <%= ingredient.name %>
+            <% if !ingredient.in_stock %>
+                <strong style="color: red">Out Of Stock</strong>
+            <% end %>
+        </li>
+    <% end %>
+</ul>
