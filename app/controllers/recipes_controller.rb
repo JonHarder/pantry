@@ -1,6 +1,13 @@
 class RecipesController < ApplicationController
   def index
-    @recipes = Recipe.all
+    logger.info "showing all recipes"
+    with_ingredients = params[:with_ingredients]
+    if !with_ingredients.nil?
+      rec_ing = RecipeIngredient.where(ingredient: with_ingredients).group(:recipe)
+      @recipes = rec_ing.map(&:recipe)
+    else
+      @recipes = Recipe.all
+    end
   end
 
   def show
@@ -9,6 +16,10 @@ class RecipesController < ApplicationController
 
   def new
     @recipe = Recipe.new
+  end
+
+  def edit
+    @recipe = Recipe.find(params[:id])
   end
 
   def create

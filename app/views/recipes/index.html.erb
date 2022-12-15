@@ -1,11 +1,15 @@
-<div>
-  <h1>Recipes</h1>
-  <%= link_to "New Recipe", new_recipe_path %>
-  <ul>
-  <% @recipes.each do |recipe| %>
-      <li>
-          <%= link_to recipe.name, recipe_path(recipe) %>
-      </li>
- <% end %>
- </ul>
+<div class="box">
+    <h1>Recipes</h1>
+    <h2><%= link_to "New Recipe", new_recipe_path %></h2>
 </div>
+<ul>
+    <% @recipes.each do |recipe| %>
+        <li>
+            <%= link_to recipe.name, recipe %>
+            <% if recipe.ingredients.any? {|i| !i.in_stock} %>
+                <strong>Missing Ingredients</strong>
+            <% end %>
+            <%= link_to "Edit", edit_recipe_path(recipe) %>
+        </li>
+    <% end %>
+</ul>

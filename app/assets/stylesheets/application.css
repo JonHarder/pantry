@@ -14,10 +14,65 @@
  *= require_self
  */
 
-table {
-    border: 1px solid black;
+/* palette: https://coolors.co/753742-aa5042-f7e3af-f3eec3-153b50 */
+
+body {
+    background-color: rgb(247, 227, 175);
+}
+
+nav {
+    background-color: rgb(21, 59, 80);
+}
+
+nav li {
+    display: inline;
+    margin: 8px;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+a {
+    color: rgb(21, 59, 80);
+}
+
+nav a {
+    text-decoration: none;
+    color: rgb(247, 227, 175);
+}
+
+nav a .current {
+    background-color: rgb(247, 227, 175);
+    color: rgb(21, 59, 80); 
 }
 
 tr:nth-child(even) {
-    background-color: #f0f0f0;
+    background-color: rgb(243, 238, 195);
+}
+
+
+button.action {
+    background-color: inherit;
+    border: 0;
+}
+
+nav a:hover {
+    color: rgb(243, 238, 195);
+}
+
+.box {
+    display: flex;
+    justify-content: space-between;
+}
+
+a.new {
+    text-decoration: none;
+    color: #999999;
+}
+
+a.new:hover {
+    color: #666666;
+}
+
+.button_to {
+    display: inline;
 }

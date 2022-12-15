@@ -1,0 +1,22 @@
+<h1><%= @recipe.name %></h1>
+<div>
+    <%= link_to "Back", @recipe %>
+</div>
+<turbo-frame id="ingredients">
+    <ul>
+        <% @recipe.ingredients.each do |ingredient| %>
+            <li>
+                <%= button_to "✘", recipe_ingredient_path(@recipe, ingredient), method: :delete, class: "action" %>
+                <%= ingredient.name %>
+            </li>
+        <% end %>
+        <li>
+            <turbo-frame id="new_recipe">
+                <a class="new"
+                   href="<%= new_recipe_ingredient_path(@recipe) %>">
+                    <i>Add ingredient</i>
+                </a>
+            </turbo-frame>
+        </li>
+    </ul>
+</turbo-frame>

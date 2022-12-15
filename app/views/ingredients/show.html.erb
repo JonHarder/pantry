@@ -1,8 +1,11 @@
 <h1><%= @ingredient.name %></h1>
+<%= link_to :back, :back %>
 <h2>In Stock: <%= @ingredient.in_stock_str %></h2>
-<h2>In Recipies</h2>
-<ul>
-    <% @ingredient.recipes.each do |recipe| %>
-        <li><%= link_to recipe.name, recipe %></li>
-    <% end %>
-</ul>
+<% unless @ingredient.recipes.empty? %>
+    <h2>In Recipes</h2>
+    <ul>
+        <% @ingredient.recipes.each do |recipe| %>
+            <li><%= link_to recipe.name, recipe %></li>
+        <% end %>
+    </ul>
+<% end %>

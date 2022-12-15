@@ -1,24 +1,24 @@
 <h1>Pantry</h1>
-<table>
-    <tr>
-        <th>In Recipes</th>
-        <th>Ingredient</th>
-        <th>In Stock</th>
-    </tr>
-    <% @ingredients.each do |ingredient| %>
+<turbo-frame id="ingredients">
+    <table style="width: 100%;">
+        <!-- Table Header Row -->
         <tr>
-            <td><input type="checkbox" id="<%= ingredient.id %>" name="<% ingredient.id %>"></td>
-            <td><%= link_to ingredient.name, ingredient %></td>
-            <td><%= ingredient.in_stock_str %></td>
+            <th>Ingredient</th>
+            <th>In Stock</th>
         </tr>
-    <% end %>
-
-    <% if !@recipes.nil? %>
-        <h2>Recipes</h2>
-        <ul>
-        <% @recipes.each do |recipe| %>
-            <li><%= link_to recipe.name, recipe %></li>
+        <!-- Table body, one row per ingredient -->
+        <% @ingredients.each do |ingredient| %>
+            <tr id="ingredient_<%= ingredient.id %>">
+                <td><%= ingredient.name %></td>
+                <td>
+                    <% if ingredient.in_stock %>
+                        <span style="color: green">Yes</span>
+                    <% else %>
+                        <span style="color: red">No</span>
+                    <% end %>
+                </td>
+                    
+            </tr>
         <% end %>
-        </ul>
-    <% end %>
-</table>
+    </table>
+</turbo-frame>

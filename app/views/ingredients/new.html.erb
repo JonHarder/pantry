@@ -1,0 +1,7 @@
+<turbo-frame id="new_recipe">
+    <li>
+        <%= form_with model: [@recipe, @ingredient] do |form| %>
+            <%= form.text_field :name  %>
+        <% end %>
+    </li>
+</turbo-frame>
