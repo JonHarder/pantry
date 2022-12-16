@@ -49,6 +49,10 @@ tr:nth-child(even) {
     background-color: rgb(243, 238, 195);
 }
 
+input {
+    background-color: rgb(247, 227, 175);
+    color: rgb(21, 59, 80); 
+}
 
 button.action {
     background-color: inherit;

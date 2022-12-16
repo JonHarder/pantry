@@ -25,10 +25,12 @@ class IngredientsController < ApplicationController
     @ingredient = Ingredient.find_by(ingredient_params)
 
     if @ingredient.nil?
-      logger.info "ingredient not found in pantry, creating"
-      @ingredient = Ingredient.build(ingredient_params)
+      logger.info "ingredient not found in pantry, creating, then adding to recipe"
+      @ingredient = Ingredient.new ingredient_params
       @ingredient.in_stock = true
       @ingredient.save
+    else
+      logger.info "ingredient already in pantry, adding to recipe"
     end
 
     @recipe.ingredients << @ingredient
