@@ -8,7 +8,8 @@
 <ul>
     <% @recipe.ingredients.each do |ingredient| %>
         <li>
-            <%= ingredient.name %>
+            <i><%= ingredient.amount_for(@recipe) %></i>
+            <strong><%= ingredient.name %></strong>
             <% if !ingredient.in_stock %>
                 <strong style="color: red">Out Of Stock</strong>
             <% end %>
