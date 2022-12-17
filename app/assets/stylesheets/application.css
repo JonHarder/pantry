@@ -58,6 +58,11 @@ input {
     color: rgb(21, 59, 80); 
 }
 
+textarea {
+    background-color: rgb(247, 227, 175);
+    color: rgb(21, 59, 80);
+}
+
 button.action {
     background-color: inherit;
     border: 0;
