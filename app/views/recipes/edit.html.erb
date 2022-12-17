@@ -2,6 +2,7 @@
 <div>
     <%= link_to "Back", @recipe %>
 </div>
+<h2>Ingredients</h2>
 <turbo-frame id="ingredients">
     <ul>
         <% @recipe.ingredients.each do |ingredient| %>
@@ -20,3 +21,13 @@
         </li>
     </ul>
 </turbo-frame>
+
+<h2>Instructions</h2>
+<%= form_with model: @recipe do |form| %>
+    <div>
+        <%= form.text_area :instructions, size: "120x30" %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

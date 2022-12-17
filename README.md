@@ -22,8 +22,10 @@ Things you may want to cover:
 ## feature ideas
 * check box in ingredients view, live update of recipes which contain all of those ingredients
   - this is hard :( might need react or some reactive js
-* add "amount:string" column to recipe_ingredient
-* add "instructions:text" column to recipe
+  - maybe just a form.select of available ingredients?
+    - still need to handle making a new ingredient on the fly though
+* ~~add "amount:string" column to recipe_ingredient~~
+* ~~add "instructions:text" column to recipe~~
 * meal planner
   - auto schedule for the week, takes from last recently cooked recipe?
 * recipe editor

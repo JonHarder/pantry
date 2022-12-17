@@ -22,6 +22,13 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update(recipe_params)
+    @recipe.save
+    redirect_to @recipe
+  end
+
   def create
     @recipe = Recipe.new(recipe_params)
     if @recipe.save
@@ -33,6 +40,6 @@ class RecipesController < ApplicationController
 
   private
   def recipe_params
-    params.require(:recipe).permit(:name)
+    params.require(:recipe).permit(:name, :instructions)
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_12_17_173539) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_17_175831) do
   create_table "ingredients", force: :cascade do |t|
     t.string "name", null: false
     t.boolean "in_stock", default: true, null: false
@@ -32,6 +32,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_17_173539) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "instructions"
   end
 
   add_foreign_key "recipe_ingredients", "ingredients"
