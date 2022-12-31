@@ -5,10 +5,14 @@
 <h2>Ingredients</h2>
 <turbo-frame id="ingredients">
     <ul>
-        <% @recipe.ingredients.each do |ingredient| %>
+        <% @recipe.recipe_ingredients.each do |ingredient| %>
             <li>
-                <%= button_to "✘", recipe_ingredient_path(@recipe, ingredient), method: :delete, class: "action" %>
-                <%= ingredient.name %>
+                <%= button_to "✘", recipe_ingredient_path(@recipe, ingredient.ingredient), method: :delete %>
+                <%= form_with model: ingredient, class: "inline" do |form| %>
+                    <%= form.text_field :amount %>
+                    <%= form.submit "save" %>
+                    <strong><%= ingredient.ingredient.name %></strong>
+                <% end %>
             </li>
         <% end %>
         <li>

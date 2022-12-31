@@ -1,7 +1,11 @@
 <turbo-frame id="new_recipe">
     <li>
-        <%= form_with model: [@recipe, @ingredient] do |form| %>
-            <%= form.text_field :name  %>
+        <%= form_with model: [@recipe, @ingredient], class: "inline" do |form| %>
+            <%= fields_for :recipe_ingredient do |recipe_ingredient| %>
+                <%= recipe_ingredient.text_field :amount, placeholder: "Amount" %>
+            <% end %>
+            <%= form.text_field :name, placeholder: "Ingredient" %>
+            <%= form.submit %>
         <% end %>
     </li>
 </turbo-frame>

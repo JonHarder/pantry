@@ -6,7 +6,7 @@
     <% @recipes.each do |recipe| %>
         <li>
             <%= link_to recipe.name, recipe %>
-            <% if recipe.ingredients.any? {|i| !i.in_stock} %>
+            <% unless recipe.in_stock %>
                 <strong>Missing Ingredients</strong>
             <% end %>
             <%= link_to "Edit", edit_recipe_path(recipe) %>

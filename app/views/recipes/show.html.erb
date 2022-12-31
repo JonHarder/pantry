@@ -6,13 +6,10 @@
 <%= link_to "Edit", edit_recipe_path(@recipe) %>
 <h2>Ingredients</h2>
 <ul>
-    <% @recipe.ingredients.each do |ingredient| %>
+    <% @recipe.recipe_ingredients.each do |ingredient| %>
         <li>
-            <i><%= ingredient.amount_for(@recipe) %></i>
+            <i><%= ingredient.amount %></i>
             <strong><%= ingredient.name %></strong>
-            <% if !ingredient.in_stock %>
-                <strong style="color: red">Out Of Stock</strong>
-            <% end %>
         </li>
     <% end %>
 </ul>

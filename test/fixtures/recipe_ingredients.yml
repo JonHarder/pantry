@@ -1,9 +1,16 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  recipe: one
-  ingredient: one
+# Butter chicken ingredients
+butter_chicken_butter:
+  recipe: butter_chicken
+  ingredient: butter
 
-two:
-  recipe: two
-  ingredient: two
+butter_chicken_salt:
+  recipe: butter_chicken
+  ingredient: salt
+
+# Poison Death ingredients
+## requires the ingredient, fish, which is not in stock
+poison_death_fish:
+  recipe: poison_death
+  ingredient: fish

@@ -1,9 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  in_stock: false
+butter:
+  name: Butter
+  in_stock: true
 
-two:
-  name: MyString
+salt:
+  name: Salt
+  in_stock: true
+
+fish:
+  name: Fish
   in_stock: false

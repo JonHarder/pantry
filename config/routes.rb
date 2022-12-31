@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   resources :recipes do
     resources :ingredients
   end
+  resource :ingredients
+
   get '/pantry', to: 'ingredients#index'
 end
